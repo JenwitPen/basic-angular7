@@ -1,0 +1,79 @@
+<div class="card bg-light">
+  <h3 class="card-header">COM2</h3>
+  <form (submit)="onSubmit()" [formGroup]="form">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="" class="label-sex">เพศ :</label>
+            <div class="form-check form-check-inline">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="male"
+                value="ชาย"
+                formControlName="sex"
+              />
+              <label for="" class="form-check-label">ชาย</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="female"
+                value="หญิง"
+                formControlName="sex"
+              />
+              <label for="" class="form-check-label">หญิง</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="">ชื่อ :</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="firstname"
+            />
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+            <label for="">นายสกุล :</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastname"
+            />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="">เบอร์โทร :</label>
+          <div class="form-group" *ngFor="let control of getPhones.controls">
+            <input type="text" class="form-control" [formControl]="control" />         
+          </div>
+          <div class="float-right">
+              <a (click)="onAddPhone()" class="text-primary"><u><small>เพิ่มเบอร์โทร</small></u></a>
+              <span class="text-muted"> <small> | </small></span>
+              <a (click)="removePhone()" class="text-danger"><u><small>ลบเบอร์โทร</small></u></a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-block btn-primary" type="submit">
+            บันทึกข้อมูล
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn btn-block btn-danger" type="button">ยกเลิก</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
