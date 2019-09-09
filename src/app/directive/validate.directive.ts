@@ -22,11 +22,14 @@ export class ValidateDirective implements OnChanges{
   }
 
   errorMessage = {
-    required: "กรุณากรอกข้อมูล"
+    required: "กรุณากรอกข้อมูล",
+    pattern:"กรุณากรอกข้อมูลให้ถูกต้อง"
   };
   getErrorMessage() {
    const control=this.control;
     if (control && control.invalid) {
+ 
+      
       const errors = Object.keys(control.errors);
       const errorMessage = this.errorMessage[errors[0]];
       return errorMessage;

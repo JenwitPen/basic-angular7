@@ -1,3 +1,4 @@
+import { IForm } from "../../../interfaces/form.interface";
 import { Component, OnInit, Input, OnChanges } from "@angular/core";
 
 @Component({
@@ -6,9 +7,6 @@ import { Component, OnInit, Input, OnChanges } from "@angular/core";
   styleUrls: ["./_com1.component.css"]
 })
 export class Com1Component {
- 
-  constructor() {
-  
-  }
-
+  @Input("formData") formData: IForm;
+  constructor() {}
 }

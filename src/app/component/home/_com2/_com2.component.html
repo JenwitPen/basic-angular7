@@ -7,23 +7,11 @@
           <div class="form-group">
             <label for="" class="label-sex">เพศ :</label>
             <div class="form-check form-check-inline">
-              <input
-                type="radio"
-                class="form-check-input"
-                id="male"
-                value="ชาย"
-                formControlName="sex"
-              />
+              <input type="radio" class="form-check-input" id="male" value="ชาย" formControlName="sex" />
               <label for="" class="form-check-label">ชาย</label>
             </div>
             <div class="form-check form-check-inline">
-              <input
-                type="radio"
-                class="form-check-input"
-                id="female"
-                value="หญิง"
-                formControlName="sex"
-              />
+              <input type="radio" class="form-check-input" id="female" value="หญิง" formControlName="sex" />
               <label for="" class="form-check-label">หญิง</label>
             </div>
           </div>
@@ -31,35 +19,30 @@
         <div class="col-6">
           <div class="form-group">
             <label for="">ชื่อ :</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="firstname"
-            />
+            <input type="text" class="form-control" formControlName="firstname" />
+            <div [appValidate]="form.get('firstname')"></div>
           </div>
         </div>
 
         <div class="col-6">
           <div class="form-group">
             <label for="">นายสกุล :</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="lastname"
-            />
+            <input type="text" class="form-control" formControlName="lastname" />
+            <div [appValidate]="form.get('lastname')"></div>
           </div>
         </div>
 
         <div class="col-12">
           <label for="">เบอร์โทร :</label>
           <div class="form-group" *ngFor="let control of getPhones.controls">
-            <input type="text" class="form-control" [formControl]="control" />         
+            <input type="text" class="form-control" [formControl]="control" />
+            <div [appValidate]="control"></div>
           </div>
           <div class="float-right">
-              <a (click)="onAddPhone()" class="text-primary"><u><small>เพิ่มเบอร์โทร</small></u></a>
-              <span class="text-muted"> <small> | </small></span>
-              <a (click)="removePhone()" class="text-danger"><u><small>ลบเบอร์โทร</small></u></a>
-            </div>
+            <a (click)="onAddPhone()" class="text-primary"><u><small>เพิ่มเบอร์โทร</small></u></a>
+            <span class="text-muted"> <small> | </small></span>
+            <a (click)="removePhone()" class="text-danger"><u><small>ลบเบอร์โทร</small></u></a>
+          </div>
         </div>
       </div>
     </div>
@@ -71,7 +54,7 @@
           </button>
         </div>
         <div class="col">
-          <button class="btn btn-block btn-danger" type="button">ยกเลิก</button>
+          <button class="btn btn-block btn-danger" type="button" (click)="onClose.emit(false)">ยกเลิก</button>
         </div>
       </div>
     </div>

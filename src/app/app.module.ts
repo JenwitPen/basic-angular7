@@ -6,14 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{BsDropdownModule}from 'ngx-bootstrap/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Com1Component } from './component/_com1/_com1.component';
-import { Com2Component } from './component/_com2/_com2.component';
+import { Com1Component } from './component/home/_com1/_com1.component';
+import { Com2Component } from './component/home/_com2/_com2.component';
 import { Directive1Directive } from './directive/directive1/directive1.directive';
 import { Directive2Directive } from './directive/directive2/directive2.directive';
 import { Pipe2Pipe } from './Pipes/pipe2.pipe';
 import {CheckinService} from './service/checkin.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ValidateDirective } from './directive/validate.directive';
+import { HomeComponent } from './component/home/home.component';
+import { RegisterComponent } from './component/register/register.component';
+import { LoginComponent } from './component/login/login.component';
+import { ProfileComponent } from './component/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,11 @@ import { ValidateDirective } from './directive/validate.directive';
     Directive2Directive,
     Pipe1Pipe,
     Pipe2Pipe,
-    ValidateDirective
+    ValidateDirective,
+    HomeComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
