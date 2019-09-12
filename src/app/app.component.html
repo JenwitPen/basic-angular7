@@ -1,6 +1,16 @@
 <div class="container">
   <h1 appDirective1>Basic Form</h1>
   <hr />
+  <div > 
+    <a routerLink="/" routerLinkActive="link-active" [routerLinkActiveOptions]={exact:true}>Home</a><span> | </span>
+    <a routerLink="/register" routerLinkActive="link-active">Register</a><span> | </span>
+    <a routerLink="/login" routerLinkActive="link-active">Login</a><span> | </span>
+    <a [routerLink]="['/','profile']" routerLinkActive="link-active">Profile</a><span> | </span>
+    <a routerLink="/data" routerLinkActive="link-active">Data</a><span> | </span>
+    <button class="btn btn-primary" (click)="onRedirec('/register')">Register</button><span> | </span>
+    <!-- <button class="btn btn-success" (click)="onRedirec('/login')">Login</button><span> | </span>
+    <button class="btn btn-warning" (click)="onRedirec(['/','profile'])">Profile</button> -->
+  </div>
   <!-- <app-home></app-home> -->
   <router-outlet></router-outlet>
   <hr />
