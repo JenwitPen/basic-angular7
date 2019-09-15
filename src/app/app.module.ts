@@ -19,6 +19,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { LoginComponent } from './component/login/login.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { DataComponent } from './component/data/data.component';
+import { NavbarComponent } from './shareds/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { DataComponent } from './component/data/data.component';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    DataComponent
+    DataComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
